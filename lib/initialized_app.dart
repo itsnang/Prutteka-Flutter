@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prutteka_flutter/pages/home_page.dart';
+import 'package:prutteka_flutter/start_page.dart';
 
 class InitializedApp extends StatelessWidget {
   const InitializedApp({super.key});
@@ -10,7 +11,7 @@ class InitializedApp extends StatelessWidget {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Prutteka',
-      home: HomePage(),
+      home: StartPage(),
     );
   }
 }
