@@ -45,16 +45,16 @@ class ButtonWidget {
       Widget? icon}) {
     borderColor ??= ColorTheme.grey900;
     textColor ??= ColorTheme.grey900;
-    final Widget textWidget;
-    if (fontSize == TextSizeEnum.subtitle) {
-      textWidget = TextWidget.subtitle(text, color: textColor, isBold: isBold);
-    } else if (fontSize == TextSizeEnum.title) {
-      textWidget = TextWidget.title(text, color: textColor, isBold: isBold);
-    } else if (fontSize == TextSizeEnum.caption) {
-      textWidget = TextWidget.caption(text, color: textColor, isBold: isBold);
-    } else {
-      textWidget = TextWidget.body(text, color: textColor, isBold: isBold);
-    }
+
+    Map<TextSizeEnum, dynamic> textMapper = {
+      TextSizeEnum.subtitle: TextWidget.subtitle,
+      TextSizeEnum.title: TextWidget.title,
+      TextSizeEnum.caption: TextWidget.caption,
+      TextSizeEnum.body: TextWidget.body,
+    };
+
+    final Widget textWidget =
+        textMapper[fontSize](text, color: textColor, isBold: isBold);
 
     return Padding(
       padding: EdgeInsets.only(
@@ -111,36 +111,20 @@ class ButtonWidget {
     isBold ??= false;
     backgroundColor ??=
         isDisabled ? ColorTheme.primaryLight : ColorTheme.primaryColor;
-    final Widget titleWidget;
-    if (fontSize == TextSizeEnum.subtitle) {
-      titleWidget = TextWidget.subtitle(
-        text,
-        color: textColor,
-        isBold: isBold,
-        maxLines: maxLines,
-      );
-    } else if (fontSize == TextSizeEnum.title) {
-      titleWidget = TextWidget.title(
-        text,
-        color: textColor,
-        isBold: isBold,
-        maxLines: maxLines,
-      );
-    } else if (fontSize == TextSizeEnum.caption) {
-      titleWidget = TextWidget.caption(
-        text,
-        color: textColor,
-        isBold: isBold,
-        maxLines: maxLines,
-      );
-    } else {
-      titleWidget = TextWidget.body(
-        text,
-        color: textColor,
-        isBold: isBold,
-        maxLines: maxLines,
-      );
-    }
+
+    Map<TextSizeEnum, dynamic> textMapper = {
+      TextSizeEnum.subtitle: TextWidget.subtitle,
+      TextSizeEnum.title: TextWidget.title,
+      TextSizeEnum.caption: TextWidget.caption,
+      TextSizeEnum.body: TextWidget.body,
+    };
+
+    final Widget titleWidget = textMapper[fontSize](
+      text,
+      color: textColor,
+      isBold: isBold,
+      maxLines: maxLines,
+    );
 
     final Widget button;
     if (icon != null) {
