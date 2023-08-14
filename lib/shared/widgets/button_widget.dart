@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heroicons/heroicons.dart';
 import 'package:prutteka_flutter/constants/constant.dart';
 import 'package:prutteka_flutter/constants/enums/text_enum.dart';
 import 'package:prutteka_flutter/shared/themes/color_theme.dart';
@@ -15,7 +16,7 @@ class ButtonWidget {
     double margin = 0,
     bool? isBold,
   }) {
-    textColor ??= ColorTheme.white;
+    textColor ??= ColorTheme.grey900;
     isBold ??= false;
     return Padding(
       padding: EdgeInsets.all(margin),
@@ -30,23 +31,25 @@ class ButtonWidget {
     );
   }
 
-  static Widget outline(String text,
-      {Function()? onPressed,
-      Color? textColor,
-      Color? backgroundColor,
-      Color? borderColor,
-      double margin = 0,
-      TextSizeEnum fontSize = TextSizeEnum.subtitle,
-      bool isFull = false,
-      bool isBold = false,
-      double borderRadius = Const.borderRadius,
-      EdgeInsets? padding,
-      bool isActive = false,
-      Widget? icon}) {
-    borderColor ??= ColorTheme.grey900;
-    textColor ??= ColorTheme.grey900;
+  static Widget outline(
+    String text, {
+    Function()? onPressed,
+    Color? textColor,
+    Color? backgroundColor,
+    Color? borderColor,
+    double margin = 0,
+    TextSizeEnum fontSize = TextSizeEnum.subtitle,
+    bool isFull = false,
+    bool isBold = false,
+    double borderRadius = Const.borderRadius,
+    EdgeInsets? padding,
+    bool isActive = false,
+    Widget? icon,
+  }) {
+    borderColor ??= isActive ? ColorTheme.tertiary : ColorTheme.grey900;
+    textColor ??= isActive ? ColorTheme.tertiary : ColorTheme.grey900;
 
-    Map<TextSizeEnum, dynamic> textMapper = {
+    final textMapper = {
       TextSizeEnum.subtitle: TextWidget.subtitle,
       TextSizeEnum.title: TextWidget.title,
       TextSizeEnum.caption: TextWidget.caption,
@@ -54,7 +57,7 @@ class ButtonWidget {
     };
 
     final Widget textWidget =
-        textMapper[fontSize](text, color: textColor, isBold: isBold);
+        textMapper[fontSize]!(text, color: textColor, isBold: isBold);
 
     return Padding(
       padding: EdgeInsets.only(
@@ -78,8 +81,13 @@ class ButtonWidget {
             )
           : TextButton.icon(
               onPressed: onPressed,
-              icon: icon,
+              icon: isActive
+                  ? const HeroIconTheme(
+                      style: HeroIconStyle.solid,
+                      child: HeroIcon(HeroIcons.star))
+                  : icon,
               style: PtButtonStyle.outlineStyle(
+                iconColor: borderColor,
                 isFull: isFull,
                 backgroundColor:
                     isActive ? ColorTheme.tertiaryLight : backgroundColor,
@@ -112,19 +120,15 @@ class ButtonWidget {
     backgroundColor ??=
         isDisabled ? ColorTheme.primaryLight : ColorTheme.primaryColor;
 
-    Map<TextSizeEnum, dynamic> textMapper = {
+    final textMapper = {
       TextSizeEnum.subtitle: TextWidget.subtitle,
       TextSizeEnum.title: TextWidget.title,
       TextSizeEnum.caption: TextWidget.caption,
       TextSizeEnum.body: TextWidget.body,
     };
 
-    final Widget titleWidget = textMapper[fontSize](
-      text,
-      color: textColor,
-      isBold: isBold,
-      maxLines: maxLines,
-    );
+    final Widget titleWidget =
+        textMapper[fontSize]!(text, color: textColor, isBold: isBold);
 
     final Widget button;
     if (icon != null) {
