@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prutteka_flutter/pages/home_page.dart';
+import 'package:prutteka_flutter/shared/themes/theme.dart';
 import 'package:prutteka_flutter/start_page.dart';
 
 class InitializedApp extends StatelessWidget {
@@ -8,10 +8,11 @@ class InitializedApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Prutteka',
-      home: StartPage(),
+      theme: PtTheme.lightTheme,
+      home: const StartPage(),
     );
   }
 }

@@ -44,6 +44,7 @@ class PtButtonStyle {
     Color? backgroundColor,
     required double borderRadius,
     EdgeInsets? padding,
+    Color? iconColor,
   }) {
     return ButtonStyle(
       fixedSize: isFull
@@ -66,6 +67,7 @@ class PtButtonStyle {
       side: MaterialStateProperty.all(
         BorderSide(color: borderColor),
       ),
+      iconColor: MaterialStateProperty.all(iconColor),
       backgroundColor: MaterialStateProperty.all(backgroundColor),
     );
   }

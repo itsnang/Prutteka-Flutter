@@ -3,7 +3,7 @@ import 'package:prutteka_flutter/constants/text_size.dart';
 import 'package:prutteka_flutter/shared/themes/styles/text_style.dart';
 
 class TextWidget extends StatelessWidget {
-  const TextWidget(this.text, {super.key, required this.textStyle});
+  const TextWidget(this.text, {super.key, this.textStyle});
 
   final String text;
   final TextStyle? textStyle;
