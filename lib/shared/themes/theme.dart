@@ -44,3 +44,38 @@ class PtTheme {
     ),
   );
 }
+
+extension ContextThemeExt on BuildContext {
+  ///background app color
+  Color get backgroundColor => Theme.of(this).scaffoldBackgroundColor;
+
+  ///card color (White color in Light Theme)
+  Color get cardColor => Theme.of(this).cardColor;
+
+  ///Primary color
+  Color get primaryColor => Theme.of(this).primaryColor;
+
+  ///Secondary Color
+  Color get secondaryColor => Theme.of(this).colorScheme.secondary;
+
+  ///Yello Color
+  Color get tertiaryColor => Theme.of(this).colorScheme.tertiary;
+
+  ///Grey Color
+  Color get disableColor => Theme.of(this).disabledColor;
+
+  ///Outline Color
+  Color get outlineColor => Theme.of(this).colorScheme.outline;
+
+  ///DarkPrimary Color
+  Color get errorColor => Theme.of(this).colorScheme.error;
+
+  ///Text 1st Color (Default Text Color)
+  Color get textPrimaryColor => Theme.of(this).textTheme.bodyMedium!.color!;
+
+  ///Text 2nd Color (lighter than Text 1st Color)
+  Color get textSecondaryColor => Theme.of(this).textTheme.bodySmall!.color!;
+
+  ///Text 3rd Color (lighter than Text 2nd Color)
+  Color get textTertiaryColor => Theme.of(this).textTheme.labelLarge!.color!;
+}
