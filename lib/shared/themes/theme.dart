@@ -18,7 +18,7 @@ class PtTheme {
       error: ColorTheme.primaryDark,
     ),
     cardColor: ColorTheme.white,
-    disabledColor: ColorTheme.grey200,
+    disabledColor: ColorTheme.grey100,
     scaffoldBackgroundColor: ColorTheme.grey50,
     appBarTheme: const AppBarTheme(
       color: ColorTheme.primaryColor,

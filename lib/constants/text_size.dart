@@ -4,7 +4,7 @@ class TextSize {
   TextSize._();
   static const double TEXT_SIZE_TITLE = 22;
   static const double TEXT_SIZE_SUBTITLE = 18;
-  static const double TEXT_SIZE_BODY = 14;
+  static const double TEXT_SIZE_BODY = 16;
   static const double TEXT_SIZE_CAPTION = 12;
   static const double TEXT_SIZE_TINY = 10;
 
