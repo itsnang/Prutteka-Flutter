@@ -125,23 +125,33 @@ class EventCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              width: 124,
-              height: 124,
-              child: ClipRRect(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-                child: CachedNetworkImage(
-                  imageUrl: img,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
               children: [
-                _buildDateWidget(context),
-                TextWidget.subtitle(title),
+                SizedBox(
+                  width: 124,
+                  height: 124,
+                  child: ClipRRect(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                    child: CachedNetworkImage(
+                      imageUrl: img,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildDateWidget(context),
+                    SizedBox(
+                      width: 160,
+                      child: TextWidget.subtitle(
+                        title,
+                        maxLines: 2,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
             IconButton(
