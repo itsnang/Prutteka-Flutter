@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prutteka_flutter/constants/dummy_data.dart';
@@ -13,6 +15,32 @@ class CarouselWidget extends StatefulWidget {
 
 class _CarouselWidgetState extends State<CarouselWidget> {
   var _selectIndex = 0;
+  final PageController _pageController = PageController(
+    initialPage: 0,
+  );
+
+  @override
+  void initState() {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
+      if (_selectIndex < imageList.length - 1) {
+        _selectIndex++;
+      } else {
+        _selectIndex = 0;
+      }
+      _pageController.animateToPage(
+        _selectIndex,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+      );
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +50,8 @@ class _CarouselWidgetState extends State<CarouselWidget> {
           margin: const EdgeInsets.symmetric(vertical: 16),
           height: 180,
           child: PageView.builder(
-            controller: PageController(viewportFraction: 0.9),
+            physics: const BouncingScrollPhysics(),
+            controller: _pageController,
             onPageChanged: (index) {
               setState(() {
                 _selectIndex = index;
