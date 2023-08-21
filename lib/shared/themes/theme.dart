@@ -55,6 +55,8 @@ extension ContextThemeExt on BuildContext {
   ///Primary color
   Color get primaryColor => Theme.of(this).primaryColor;
 
+  Color get primaryLightColor => Theme.of(this).primaryColorLight;
+
   ///Secondary Color
   Color get secondaryColor => Theme.of(this).colorScheme.secondary;
 
