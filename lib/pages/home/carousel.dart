@@ -15,13 +15,13 @@ class CarouselWidget extends StatefulWidget {
 
 class _CarouselWidgetState extends State<CarouselWidget> {
   var _selectIndex = 0;
+  Timer? _timer;
   final PageController _pageController = PageController(
     initialPage: 0,
   );
 
-  @override
-  void initState() {
-    Timer.periodic(const Duration(seconds: 3), (timer) {
+  void _startTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
       if (_selectIndex < imageList.length - 1) {
         _selectIndex++;
       } else {
@@ -33,12 +33,18 @@ class _CarouselWidgetState extends State<CarouselWidget> {
         curve: Curves.easeIn,
       );
     });
+  }
+
+  @override
+  void initState() {
+    _startTimer();
     super.initState();
   }
 
   @override
   void dispose() {
     super.dispose();
+    _timer?.cancel();
     _pageController.dispose();
   }
 
