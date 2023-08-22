@@ -36,7 +36,7 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     if (!isLandscape) {
       return SizedBox(
-        height: 360,
+        height: 380,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -90,7 +90,10 @@ class EventCard extends StatelessWidget {
                         const SizedBox(
                           height: 8,
                         ),
-                        TextWidget.title(title),
+                        TextWidget.subtitle(
+                          title,
+                          maxLines: 2,
+                        ),
                       ],
                     ),
                   )
