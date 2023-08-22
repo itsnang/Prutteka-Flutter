@@ -21,13 +21,18 @@ class SplashScreen extends StatelessWidget {
               left: 0,
               right: 0,
               child: Container(
-                height: 250,
+                height: 270,
                 width: double.infinity,
                 alignment: Alignment.center,
-                child: const Text(
-                  "From Prutteka.com",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
+                child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("from"),
+                      Text("Prutteka.com",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 21))
+                    ]),
               ))
         ],
       ),
