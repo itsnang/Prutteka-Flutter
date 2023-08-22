@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prutteka_flutter/controllers/bottom_navigator_controller.dart';
 import 'package:prutteka_flutter/pages/favorites/favorite_page.dart';
-import 'package:prutteka_flutter/pages/home_page.dart';
+import 'package:prutteka_flutter/pages/home/home_page.dart';
 import 'package:prutteka_flutter/pages/search/search_page.dart';
 import 'package:prutteka_flutter/pages/splash_screen.dart';
 import 'package:prutteka_flutter/pages/user/user_page.dart';
@@ -20,6 +20,8 @@ class StartPage extends StatefulWidget {
     FavoritePage(),
     UserPage()
   ];
+
+  static final bindings = [null, null, null, null];
 }
 
 class _StartPageState extends State<StartPage> {
@@ -44,6 +46,9 @@ class _StartPageState extends State<StartPage> {
             init: BottomNavConroller(),
             // initState: (_) {},
             builder: (builder) {
+              final binding =
+                  StartPage.bindings.elementAt(builder.bottomNavIndex);
+              if (binding != null) binding.dependencies();
               return Scaffold(
                 bottomNavigationBar: BottomNavigatorWidget(
                   onTap: (index) => builder.onBottomNavTap(index),
