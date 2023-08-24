@@ -33,7 +33,6 @@ class EventController extends GetxController {
     if (loading.value || ended.value) return;
     loading.value = true;
     _currentPage++;
-    print('========> controller');
     final newPaging =
         await _fetchEventUseCase.execute(Tuple2(_currentPage, _limit));
 

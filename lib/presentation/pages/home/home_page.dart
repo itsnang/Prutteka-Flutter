@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
+import 'package:prutteka_flutter/app/shared/widgets/skeleton/skeleton_card_widget.dart';
 import 'package:prutteka_flutter/presentation/controllers/event/event_controller.dart';
 import 'package:prutteka_flutter/presentation/pages/home/carousel.dart';
 import 'package:prutteka_flutter/app/services/helper/convert_date.dart';
@@ -35,10 +37,33 @@ class _HomePage extends State<HomePage> {
             const CarouselWidget(),
             Expanded(
               child: ListView.builder(
+                padding: const EdgeInsets.all(8),
                 physics: const BouncingScrollPhysics(),
                 controller: _scrollController,
-                itemCount: controller.events.length,
+                itemCount: controller.events.length + 1,
                 itemBuilder: (context, index) {
+                  if (index == controller.events.length) {
+                    if (controller.loading.value) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: const [
+                            SkeletonCard(),
+                            SkeletonCard(),
+                            SkeletonCard(),
+                          ],
+                        ),
+                      );
+                    } else if (controller.ended.value) {
+                      return Center(
+                        child: TextWidget.body(
+                          'No More Events',
+                          color: context.primaryColor,
+                        ),
+                      );
+                    }
+                  }
+
                   final event = controller.events[index];
 
                   final date =
@@ -47,21 +72,18 @@ class _HomePage extends State<HomePage> {
                   final time = ConvertDate.formatTime(
                     event.attributes?.times[0].startTime,
                   );
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: EventCard(
-                      onPressed: () {},
-                      img: event.attributes?.imageSrc ?? '',
-                      title: event.attributes?.name.en ??
-                          event.attributes?.name.km ??
-                          '',
-                      date: date,
-                      isLandscape: true,
-                      location: '',
-                      id: 12,
-                      onInterested: () {},
-                      time: time,
-                    ),
+                  return EventCard(
+                    onPressed: () {},
+                    img: event.attributes?.imageSrc ?? '',
+                    title: event.attributes?.name.en ??
+                        event.attributes?.name.km ??
+                        '',
+                    date: date,
+                    isLandscape: true,
+                    location: '',
+                    id: 12,
+                    onInterested: () {},
+                    time: time,
                   );
                 },
               ),
@@ -75,7 +97,6 @@ class _HomePage extends State<HomePage> {
   _scrollListener() {
     if (_scrollController.position.extentAfter < 500) {
       controller.loadMore();
-      print('=====> Listenelr');
     }
   }
 }
