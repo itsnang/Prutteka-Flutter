@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:prutteka_flutter/constants/enums/text_enum.dart';
 import 'package:prutteka_flutter/constants/text_size.dart';
-import 'package:prutteka_flutter/shared/themes/color_theme.dart';
+import 'package:prutteka_flutter/app/shared/themes/color_theme.dart';
 
 class PtTextStyle {
   PtTextStyle._();

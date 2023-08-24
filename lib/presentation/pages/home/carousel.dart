@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prutteka_flutter/constants/dummy_data.dart';
-import 'package:prutteka_flutter/shared/themes/theme.dart';
-import 'package:prutteka_flutter/shared/widgets/carousel_card_widget.dart';
-import 'package:prutteka_flutter/shared/widgets/text_widget.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
+import 'package:prutteka_flutter/app/shared/widgets/carousel_card_widget.dart';
+import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
 
 class CarouselWidget extends StatefulWidget {
   const CarouselWidget({super.key});

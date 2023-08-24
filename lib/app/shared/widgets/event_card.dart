@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:prutteka_flutter/shared/themes/theme.dart';
-import 'package:prutteka_flutter/shared/widgets/button_widget.dart';
-import 'package:prutteka_flutter/shared/widgets/text_widget.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
+import 'package:prutteka_flutter/app/shared/widgets/button_widget.dart';
+import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
 
 class EventCard extends StatelessWidget {
   EventCard({

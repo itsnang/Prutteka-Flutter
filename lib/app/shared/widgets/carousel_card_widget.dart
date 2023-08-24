@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:prutteka_flutter/shared/themes/theme.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
 
 class CarouselCard extends StatelessWidget {
   const CarouselCard({super.key, required this.img});

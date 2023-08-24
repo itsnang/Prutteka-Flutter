@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prutteka_flutter/controllers/event/event_controller.dart';
-import 'package:prutteka_flutter/pages/home/carousel.dart';
+import 'package:prutteka_flutter/presentation/controllers/event/event_controller.dart';
+import 'package:prutteka_flutter/presentation/pages/home/carousel.dart';
 import 'package:prutteka_flutter/app/services/helper/convert_date.dart';
-import 'package:prutteka_flutter/shared/widgets/event_card.dart';
-import 'package:prutteka_flutter/shared/widgets/text_widget.dart';
+import 'package:prutteka_flutter/app/shared/widgets/event_card.dart';
+import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

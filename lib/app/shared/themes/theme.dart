@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prutteka_flutter/shared/themes/color_theme.dart';
+import 'package:prutteka_flutter/app/shared/themes/color_theme.dart';
 
 class PtTheme {
   PtTheme._();

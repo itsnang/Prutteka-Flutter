@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prutteka_flutter/controllers/event/event_binding.dart';
-import 'package:prutteka_flutter/shared/themes/theme.dart';
-import 'package:prutteka_flutter/start_page.dart';
+import 'package:prutteka_flutter/presentation/controllers/event/event_binding.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
+import 'package:prutteka_flutter/presentation/start_page.dart';
 
 class InitializedApp extends StatelessWidget {
   const InitializedApp({super.key});

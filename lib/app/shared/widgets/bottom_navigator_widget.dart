@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:prutteka_flutter/controllers/bottom_navigator_controller.dart';
+import 'package:prutteka_flutter/presentation/controllers/bottom_navigator_controller.dart';
 
-import 'package:prutteka_flutter/shared/themes/color_theme.dart';
+import 'package:prutteka_flutter/app/shared/themes/color_theme.dart';
 
 class BottomNavigatorWidget extends StatelessWidget {
   BottomNavigatorWidget({super.key, this.onTap});

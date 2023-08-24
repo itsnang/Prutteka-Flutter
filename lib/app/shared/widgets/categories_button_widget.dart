@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prutteka_flutter/shared/themes/color_theme.dart';
-import 'package:prutteka_flutter/shared/themes/styles/button_style.dart';
-import 'package:prutteka_flutter/shared/themes/theme.dart';
-import 'package:prutteka_flutter/shared/widgets/text_widget.dart';
+import 'package:prutteka_flutter/app/shared/themes/color_theme.dart';
+import 'package:prutteka_flutter/app/shared/themes/styles/button_style.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
+import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
 
 class CategoriesBtnWidget extends StatelessWidget {
   CategoriesBtnWidget(
