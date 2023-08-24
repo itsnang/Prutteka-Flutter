@@ -25,7 +25,9 @@ class _HomePage extends State<HomePage> {
         controller.fetchData();
         _scrollController.addListener(_scrollListener);
       },
-      didUpdateWidget: (old, newState) {},
+      dispose: (state) {
+        _scrollController.removeListener(_scrollListener);
+      },
       builder: (_) {
         return Scaffold(
             body: Column(

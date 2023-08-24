@@ -17,7 +17,7 @@ class EventController extends GetxController {
   var ended = false.obs;
 
   fetchData() async {
-    // if (events.isNotEmpty) return;
+    if (events.isNotEmpty) return;
     loading.value = true;
     _currentPage = 1;
 
