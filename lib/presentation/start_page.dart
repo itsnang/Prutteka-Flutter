@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prutteka_flutter/controllers/bottom_navigator_controller.dart';
-import 'package:prutteka_flutter/pages/favorites/favorite_page.dart';
-import 'package:prutteka_flutter/pages/home/home_page.dart';
-import 'package:prutteka_flutter/pages/search/search_page.dart';
-import 'package:prutteka_flutter/pages/splash_screen.dart';
-import 'package:prutteka_flutter/pages/user/user_page.dart';
-import 'package:prutteka_flutter/shared/widgets/bottom_navigator_widget.dart';
+import 'package:prutteka_flutter/presentation/controllers/bottom_navigator_controller.dart';
+import 'package:prutteka_flutter/presentation/pages/favorites/favorite_page.dart';
+import 'package:prutteka_flutter/presentation/pages/home/home_page.dart';
+import 'package:prutteka_flutter/presentation/pages/search/search_page.dart';
+import 'package:prutteka_flutter/presentation/pages/splash_screen.dart';
+import 'package:prutteka_flutter/presentation/pages/user/user_page.dart';
+import 'package:prutteka_flutter/app/shared/widgets/bottom_navigator_widget.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});

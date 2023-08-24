@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
                 height: 270,
                 width: double.infinity,
                 alignment: Alignment.center,
-                child: const Column(
+                child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [

@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:prutteka_flutter/initialized_app.dart';
+import 'package:prutteka_flutter/presentation/initialized_app.dart';
 
 import 'package:prutteka_flutter/main.dart';
 

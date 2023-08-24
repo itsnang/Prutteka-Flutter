@@ -17,6 +17,7 @@ class EventController extends GetxController {
   var ended = false.obs;
 
   fetchData() async {
+    if (events.isNotEmpty) return;
     loading.value = true;
     _currentPage = 1;
 
@@ -32,7 +33,7 @@ class EventController extends GetxController {
     if (loading.value || ended.value) return;
     loading.value = true;
     _currentPage++;
-
+    print('========> controller');
     final newPaging =
         await _fetchEventUseCase.execute(Tuple2(_currentPage, _limit));
 

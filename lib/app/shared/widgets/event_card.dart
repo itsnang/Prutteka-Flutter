@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:prutteka_flutter/shared/themes/theme.dart';
-import 'package:prutteka_flutter/shared/widgets/button_widget.dart';
-import 'package:prutteka_flutter/shared/widgets/text_widget.dart';
+import 'package:prutteka_flutter/app/shared/themes/theme.dart';
+import 'package:prutteka_flutter/app/shared/widgets/button_widget.dart';
+import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
 
 class EventCard extends StatelessWidget {
   EventCard({
@@ -18,12 +18,12 @@ class EventCard extends StatelessWidget {
     required this.id,
     required this.onInterested,
     this.onDelete,
-    required this.time,
+    this.time,
   });
   final String img;
   final String title;
   final String date;
-  final String time;
+  String? time;
   final int id;
   final String location;
   bool isActive;
@@ -82,7 +82,7 @@ class EventCard extends StatelessWidget {
                               ),
                             ),
                             TextWidget.body(
-                              time,
+                              time!,
                               color: context.primaryColor,
                             ),
                           ],
@@ -116,6 +116,7 @@ class EventCard extends StatelessWidget {
       );
     }
     return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
       height: 124,
       decoration: BoxDecoration(
         color: context.disableColor,
@@ -142,13 +143,16 @@ class EventCard extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  width: 4,
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildDateWidget(context),
                     SizedBox(
                       width: 160,
-                      child: TextWidget.subtitle(
+                      child: TextWidget.body(
                         title,
                         maxLines: 2,
                       ),
@@ -165,7 +169,7 @@ class EventCard extends StatelessWidget {
                   HeroIcons.star,
                   color:
                       isActive ? context.tertiaryColor : context.outlineColor,
-                  size: 28,
+                  size: 24,
                 ),
               ),
             )
@@ -190,7 +194,7 @@ class EventCard extends StatelessWidget {
           ),
         ),
         TextWidget.caption(
-          time,
+          time!,
           color: context.primaryColor,
         ),
       ],

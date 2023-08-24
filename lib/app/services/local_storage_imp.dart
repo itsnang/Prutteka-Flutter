@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:prutteka_flutter/constants/constant.dart';
-import 'package:prutteka_flutter/services/local_storage_service.dart';
+import 'package:prutteka_flutter/app/services/local_storage_service.dart';
 
 class LocalStorageImplement implements LocalStorageDataSource {
   final _prefs = Hive.box(Const.hiveKey);
