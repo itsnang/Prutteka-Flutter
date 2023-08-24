@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:prutteka_flutter/constants/dummy_data.dart';
 import 'package:prutteka_flutter/shared/themes/theme.dart';
 import 'package:prutteka_flutter/shared/widgets/carousel_card_widget.dart';
+import 'package:prutteka_flutter/shared/widgets/text_widget.dart';
 
 class CarouselWidget extends StatefulWidget {
   const CarouselWidget({super.key});
@@ -30,7 +31,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       _pageController.animateToPage(
         _selectIndex,
         duration: const Duration(milliseconds: 300),
-        curve: Curves.easeIn,
+        curve: Curves.linear,
       );
     });
   }
@@ -51,7 +52,18 @@ class _CarouselWidgetState extends State<CarouselWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 60,
+            left: 8,
+          ),
+          child: TextWidget.title(
+            'Most Views Events',
+            isBold: true,
+          ),
+        ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 16),
           height: 180,

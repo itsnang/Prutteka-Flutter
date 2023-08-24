@@ -14,3 +14,19 @@ List<DummyImage> imageList = [
   DummyImage(4, 'EX',
       'https://www.pattayamail.com/wp-content/uploads/2023/03/t-05-Thailand-requests-Cambodia-to-lower-its-28-million-baht-fee-for-SEA-Games-broadcast-rights.jpg'),
 ];
+
+class Categories {
+  Categories._();
+  static List<String> categories = [
+    'All',
+    'Recently Added',
+    'Free',
+    'Online',
+    'Education',
+    'Sport',
+    'Music',
+    'Exhibtion',
+    'Technoloy',
+    'Charity',
+  ];
+}
