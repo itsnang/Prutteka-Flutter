@@ -23,4 +23,4 @@ sport event, charity events and more.
 - Getx Clean Architecture
 
 ### Meta
-Lorn Samnang
+Lorn Samnang / Sean Sophearom
