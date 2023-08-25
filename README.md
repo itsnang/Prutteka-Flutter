@@ -1,16 +1,25 @@
-# prutteka_flutter
+# Prutteka Flutter
 
-A new Flutter project.
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="90" height="90"/> </a>  </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="90" height="90"/> </a> <a href="https://pub.dev/packages/get" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/jonataslaw/getx-community/master/get.png" alt="figma" width="50%" height="50%"/>
 
-## Getting Started
+A website that helps the people find events
+and allows users to browse, create, and promote local
+events. Those include education event, exhibition event,
+sport event, charity events and more.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src="https://firebasestorage.googleapis.com/v0/b/todo-81bff.appspot.com/o/Screenshot_20230825-161423.png?alt=media&token=e4c8c6b6-6dfd-4d14-9c56-4640d37265e6" style="max-width: 200px; width: 200px; height: auto;"> <img src="https://firebasestorage.googleapis.com/v0/b/todo-81bff.appspot.com/o/Screenshot_20230825-161426.png?alt=media&token=4142a769-94a1-4d43-8cc5-4f99aa0c47fe" style="max-width: 200px; width: 200px; height: auto;"> <img src="https://firebasestorage.googleapis.com/v0/b/todo-81bff.appspot.com/o/Screenshot_20230825-161441.png?alt=media&token=f83cea67-8792-4089-887d-92ed817a6393" style="max-width: 200px; width: 200px; height: auto;">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Tools
+
+- Dart
+- Flutter
+- Prutteka Backend Api
+- Getx
+- Getx Clean Architecture
+
+### Meta
+Lorn Samnang
