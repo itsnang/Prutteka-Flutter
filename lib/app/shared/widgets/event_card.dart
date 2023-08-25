@@ -144,7 +144,7 @@ class EventCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  width: 4,
+                  width: 5,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,7 +154,8 @@ class EventCard extends StatelessWidget {
                       width: 160,
                       child: TextWidget.body(
                         title,
-                        maxLines: 2,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],
