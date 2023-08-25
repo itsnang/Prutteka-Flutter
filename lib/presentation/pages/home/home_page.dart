@@ -36,56 +36,59 @@ class _HomePage extends State<HomePage> {
           children: [
             const CarouselWidget(),
             Expanded(
-              child: ListView.builder(
-                padding: const EdgeInsets.all(8),
-                physics: const BouncingScrollPhysics(),
-                controller: _scrollController,
-                itemCount: controller.events.length + 1,
-                itemBuilder: (context, index) {
-                  if (index == controller.events.length) {
-                    if (controller.loading.value) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: const [
-                            SkeletonCard(),
-                            SkeletonCard(),
-                            SkeletonCard(),
-                          ],
-                        ),
-                      );
-                    } else if (controller.ended.value) {
-                      return Center(
-                        child: TextWidget.body(
-                          'No More Events',
-                          color: context.primaryColor,
-                        ),
-                      );
+              child: RefreshIndicator(
+                onRefresh: () => controller.onRefresh(),
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  physics: const BouncingScrollPhysics(),
+                  controller: _scrollController,
+                  itemCount: controller.events.length + 1,
+                  itemBuilder: (context, index) {
+                    if (index == controller.events.length) {
+                      if (controller.loading.value) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: const [
+                              SkeletonCard(),
+                              SkeletonCard(),
+                              SkeletonCard(),
+                            ],
+                          ),
+                        );
+                      } else if (controller.ended.value) {
+                        return Center(
+                          child: TextWidget.body(
+                            'No More Events',
+                            color: context.primaryColor,
+                          ),
+                        );
+                      }
                     }
-                  }
 
-                  final event = controller.events[index];
+                    final event = controller.events[index];
 
-                  final date =
-                      ConvertDate.formatDate(event.attributes?.date.startDate);
+                    final date = ConvertDate.formatDate(
+                        event.attributes?.date.startDate);
 
-                  final time = ConvertDate.formatTime(
-                    event.attributes?.times[0].startTime,
-                  );
-                  return EventCard(
-                    onPressed: () {},
-                    img: event.attributes?.imageSrc ?? '',
-                    title: event.attributes?.name.en ??
-                        event.attributes?.name.km ??
-                        '',
-                    date: date,
-                    isLandscape: true,
-                    location: '',
-                    id: 12,
-                    onInterested: () {},
-                    time: time,
-                  );
-                },
+                    final time = ConvertDate.formatTime(
+                      event.attributes?.times[0].startTime,
+                    );
+                    return EventCard(
+                      onPressed: () {},
+                      img: event.attributes?.imageSrc ?? '',
+                      title: event.attributes?.name.en ??
+                          event.attributes?.name.km ??
+                          '',
+                      date: date,
+                      isLandscape: true,
+                      location: '',
+                      id: 12,
+                      onInterested: () {},
+                      time: time,
+                    );
+                  },
+                ),
               ),
             ),
           ],

@@ -29,6 +29,19 @@ class EventController extends GetxController {
     loading.value = false;
   }
 
+  Future onRefresh() async {
+    ended.value = false;
+    loading.value = true;
+    _currentPage = 1;
+
+    final newPaging =
+        await _fetchEventUseCase.execute(Tuple2(_currentPage, _limit));
+
+    events.assignAll(newPaging.events);
+    _paging.value = newPaging;
+    loading.value = false;
+  }
+
   loadMore() async {
     if (loading.value || ended.value) return;
     loading.value = true;
