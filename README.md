@@ -1,7 +1,7 @@
 # Prutteka Flutter
 
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="90" height="90"/> </a>  </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="90" height="90"/> </a> <a href="https://pub.dev/packages/get" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/jonataslaw/getx-community/master/get.png" alt="figma" width="50%" height="50%"/>
+<p align="left"> <a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="80" height="80"/> </a>  </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="80" height="80"/>  <img src="https://miro.medium.com/max/550/1*j9tPl0xdxHoK6vAZSbdGig.png" alt="flutter" width="140" height="80"/> </a> <a href="https://pub.dev/packages/get" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/jonataslaw/getx-community/master/get.png" alt="figma" width="50%" height="50%"/>
 
 A Platform that helps the people find events
 and allows users to browse, create, and promote local
@@ -18,7 +18,8 @@ sport event, charity events and more.
 - Dart
 - Flutter
 - Prutteka Backend Api
-- Getx
+- Getx State Management
+- Hive Key Value Local Storage
 - Getx Clean Architecture
 
 ### Meta
