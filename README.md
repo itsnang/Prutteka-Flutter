@@ -3,7 +3,7 @@
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="90" height="90"/> </a>  </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="90" height="90"/> </a> <a href="https://pub.dev/packages/get" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/jonataslaw/getx-community/master/get.png" alt="figma" width="50%" height="50%"/>
 
-A website that helps the people find events
+A Platform that helps the people find events
 and allows users to browse, create, and promote local
 events. Those include education event, exhibition event,
 sport event, charity events and more.
