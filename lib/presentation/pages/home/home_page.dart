@@ -7,6 +7,7 @@ import 'package:prutteka_flutter/presentation/pages/home/carousel.dart';
 import 'package:prutteka_flutter/app/services/helper/convert_date.dart';
 import 'package:prutteka_flutter/app/shared/widgets/event_card.dart';
 import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
+import 'package:prutteka_flutter/presentation/pages/home/event/event_detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -74,18 +75,23 @@ class _HomePage extends State<HomePage> {
                     final time = ConvertDate.formatTime(
                       event.attributes?.times[0].startTime,
                     );
-                    return EventCard(
-                      onPressed: () {},
-                      img: event.attributes?.imageSrc ?? '',
-                      title: event.attributes?.name.en ??
-                          event.attributes?.name.km ??
-                          '',
-                      date: date,
-                      isLandscape: true,
-                      location: '',
-                      id: 12,
-                      onInterested: () {},
-                      time: time,
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => EventDetailPage(event: event));
+                      },
+                      child: EventCard(
+                        onPressed: () {},
+                        img: event.attributes?.imageSrc ?? '',
+                        title: event.attributes?.name.en ??
+                            event.attributes?.name.km ??
+                            '',
+                        date: date,
+                        isLandscape: true,
+                        location: '',
+                        id: 12,
+                        onInterested: () {},
+                        time: time,
+                      ),
                     );
                   },
                 ),
