@@ -46,6 +46,10 @@ dependencies:
   tuple: ^2.0.1
   intl: ^0.18.1
   shimmer: ^3.0.0
+  flutter_html: 3.0.0-alpha.5
+  url_launcher: ^6.1.11
+  fluttertoast: ^8.2.2
+
 
 dev_dependencies:
   flutter_test:
