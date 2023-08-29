@@ -46,7 +46,7 @@ class ButtonWidget {
     bool isActive = false,
     Widget? icon,
   }) {
-    borderColor ??= isActive ? ColorTheme.tertiary : ColorTheme.grey900;
+    borderColor ??= isActive ? ColorTheme.tertiary : ColorTheme.grey300;
     textColor ??= isActive ? ColorTheme.tertiary : ColorTheme.grey900;
 
     final textMapper = {
@@ -87,7 +87,7 @@ class ButtonWidget {
                       child: HeroIcon(HeroIcons.star))
                   : icon,
               style: PtButtonStyle.outlineStyle(
-                iconColor: borderColor,
+                iconColor: ColorTheme.grey900,
                 isFull: isFull,
                 backgroundColor:
                     isActive ? ColorTheme.tertiaryLight : backgroundColor,
@@ -138,6 +138,7 @@ class ButtonWidget {
           backgroundColor: backgroundColor,
           borderRadius: borderRadius,
           padding: padding,
+          isFull: isFull,
         ),
         icon: icon,
         label: titleWidget,
