@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:prutteka_flutter/constants/text_size.dart';
 import 'package:prutteka_flutter/app/shared/themes/styles/text_style.dart';
 
@@ -123,6 +124,26 @@ class TextWidget extends StatelessWidget {
         fontSize: fontSize,
         height: height,
       ),
+    );
+  }
+}
+
+extension HtmlExt on Text {
+  Html toHtmlText({OnTap? onTap}) {
+    final textStyle = style ?? PtTextStyle.body(isBold: true);
+    return Html(
+      data: data,
+      onLinkTap: onTap,
+      style: {
+        'body': Style(
+          color: textStyle.color,
+          fontSize: FontSize(textStyle.fontSize!),
+          fontFamily: textStyle.fontFamily,
+          textAlign: textAlign,
+          maxLines: maxLines,
+          lineHeight: const LineHeight(1.2),
+        ),
+      },
     );
   }
 }
