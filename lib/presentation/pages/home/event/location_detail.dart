@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:prutteka_flutter/app/services/utilities/url_launcher.dart';
 import 'package:prutteka_flutter/app/shared/themes/theme.dart';
 import 'package:prutteka_flutter/app/shared/widgets/skeleton/skeleton_widget.dart';
 import 'package:prutteka_flutter/app/shared/widgets/text_widget.dart';
@@ -65,17 +66,24 @@ class Map extends StatelessWidget {
               location.address,
               fontSize: 14,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 12,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: CachedNetworkImage(
-                  imageUrl: location.imageSrc,
-                  progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      const Skeleton(
-                    height: 180,
+            InkWell(
+              onTap: () => UrlUtil.launchUrl(location.url),
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: AspectRatio(
+                    aspectRatio: 2 / 1,
+                    child: CachedNetworkImage(
+                      imageUrl: location.imageSrc,
+                      fit: BoxFit.fill,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) => const Skeleton(
+                        height: 178,
+                      ),
+                    ),
                   ),
                 ),
               ),
