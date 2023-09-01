@@ -16,7 +16,7 @@ class EventDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: context.backgroundColor,
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(vertical: 12),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
           side: BorderSide(
@@ -24,7 +24,7 @@ class EventDetail extends StatelessWidget {
           )),
       elevation: 0,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             Row(
