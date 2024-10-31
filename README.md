@@ -20,7 +20,7 @@ sport event, charity events and more.
 - Prutteka Backend Api
 - Getx State Management
 - Hive Key Value Local Storage
-- Getx Clean Architecture
+- Clean Architecture
 
 ### Meta
 Lorn Samnang / Sean Sophearom
